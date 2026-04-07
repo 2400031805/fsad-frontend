@@ -7,8 +7,12 @@ function Navbar({ user, onLogout }) {
       <nav className="nav-links">
         <NavLink to="/" end>Home</NavLink>
         <NavLink to="/resources">Resources</NavLink>
+        <NavLink to="/therapy-classes">Therapy</NavLink>
         <NavLink to="/counseling">Counseling</NavLink>
         <NavLink to="/support-groups">Support Groups</NavLink>
+        <NavLink to="/mood-tracker">Mood Tracker</NavLink>
+        <NavLink to="/jokes">Comedy</NavLink>
+        <NavLink to="/games">Games</NavLink>
         {user?.role === 'admin' && <NavLink to="/admin">Admin</NavLink>}
         {!user ? (
           <>

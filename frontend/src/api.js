@@ -53,3 +53,33 @@ export function joinGroup(groupId, userId) {
     body: JSON.stringify({ userId }),
   });
 }
+
+export function getTherapyClasses() {
+  return request('/therapy');
+}
+
+export function enrollTherapyClass(classId, userId) {
+  return request(`/therapy/${classId}/enroll`, {
+    method: 'POST',
+    body: JSON.stringify({ userId }),
+  });
+}
+
+export function getJokes() {
+  return request('/jokes');
+}
+
+export function getGames() {
+  return request('/games');
+}
+
+export function trackMood(payload) {
+  return request('/moods', {
+    method: 'POST',
+    body: JSON.stringify(payload),
+  });
+}
+
+export function getUserMoods(userId) {
+  return request(`/moods/user/${userId}`);
+}

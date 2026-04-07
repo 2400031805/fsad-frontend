@@ -7,6 +7,11 @@ import Register from './pages/Register.jsx';
 import Resources from './pages/Resources.jsx';
 import Counseling from './pages/Counseling.jsx';
 import SupportGroups from './pages/SupportGroups.jsx';
+import TherapyClasses from './pages/TherapyClasses.jsx';
+import JokesVideos from './pages/JokesVideos.jsx';
+import MoodTracker from './pages/MoodTracker.jsx';
+import Games from './pages/Games.jsx';
+import GamePlay from './pages/GamePlay.jsx';
 import AdminDashboard from './pages/AdminDashboard.jsx';
 
 function App() {
@@ -40,6 +45,11 @@ function App() {
           <Route path="/resources" element={<Resources />} />
           <Route path="/counseling" element={<Counseling user={user} />} />
           <Route path="/support-groups" element={<SupportGroups user={user} />} />
+          <Route path="/therapy-classes" element={<TherapyClasses user={user} />} />
+          <Route path="/jokes" element={<JokesVideos />} />
+          <Route path="/games" element={<Games user={user} />} />
+          <Route path="/games/:gameId" element={<GamePlay />} />
+          <Route path="/mood-tracker" element={<MoodTracker user={user} />} />
           <Route path="/admin" element={user?.role === 'admin' ? <AdminDashboard /> : <Navigate to="/login" replace />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
